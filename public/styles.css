@@ -328,18 +328,22 @@ button:hover {
   padding: 20px;
   border-radius: 8px;
   justify-items: center;
+  font-size: 12px;
 }
 #ranking h3 {
   margin-top: 0;
   margin-bottom: 10px;
+  /* font-size: 12px; */
 }
 #ranking-list {
   list-style: none;
   padding-left: 0;
   margin: 0;
+  font-size: 12px;
 }
 #ranking-list li {
   margin-bottom: 6px;
+  font-size: 12px;
 }
 #ranking button {
   margin-top: 10px;
@@ -404,11 +408,40 @@ select, input{
     transform: scale(1.1);
   }
 }
-@media (max-width: 990px) {
+@media screen and (max-width: 990px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
+
   #scale-wrapper {
-    transform: scale(1.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #ds-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #nintendo-ds {
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 20px #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
+
 @media (max-width: 768px) {
   #scale-wrapper {
     transform: scale(1.1);

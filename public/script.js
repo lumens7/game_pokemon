@@ -194,7 +194,7 @@ function mostrarRanking() {
       lista.innerHTML = "";
       ranking.forEach((item, index) => {
         let li = document.createElement("li");
-        li.innerText = `${index + 1}. ${item.nome} - ${item.pontos} pts`;
+        li.innerText = `${index + 1}. ${item.nome} = ${item.pontos} pts`;
         lista.appendChild(li);
       });
     });
@@ -279,13 +279,18 @@ function mostrarRankingSimples() {
       ranking.sort((a, b) => b.pontos - a.pontos);
       // Exibe o ranking
       document.getElementById("ranking").style.display = "block";
-
+      document.getElementById("menu").style.display = "none";
+      document.getElementById("game").style.display = "none";
+      document.getElementById("pokemon-img").style.display = "none";
+      document.getElementById("rodada-info").style.display = "none";
+      document.getElementById("pergunta").style.display = "none";
+      document.getElementById("mensagem-rodada").style.display = "none";
       // Preenche a lista
       let lista = document.getElementById("ranking-list");
       lista.innerHTML = "";
       ranking.forEach((item, index) => {
         let li = document.createElement("li");
-        li.innerText = `${index + 1}. ${item.nome} - ${item.pontos} pts`;
+        li.innerText = `${index + 1}. ${item.nome} = ${item.pontos} pts`;
         lista.appendChild(li);
       });
     });
