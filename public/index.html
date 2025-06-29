@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="pokebola.png">
+  <title>Quem é esse Pokémon?</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="scale-wrapper">
+    <div id="ds-container">
+    <!-- Centro: Telas e Hinge -->
+    <div id="nintendo-ds">
+      <div class="cima">
+      <div class="speakers1">
+        <div class="speaker left"></div>
+        <div class="speaker left"></div>
+      </div>
+      <div class="speakers2">
+        <div class="speaker left"></div>
+        <div class="speaker left"></div>
+      </div>
+      <div class="speakers3">
+        <div class="speaker left"></div>
+        <div class="speaker left"></div>
+      </div>
+      <div id="top-screen" class="tela-preta">
+        <img id="logo-topo" src="pokemon_logo.png" alt="Logo Pokémon">
+        <div id="rodada-info"></div>
+        <div id="pergunta">Quem é esse Pokémon?</div>
+        <img id="pokemon-img" src="" alt="Quem é esse Pokémon?">
+        <div id="mensagem-rodada"></div>
+        <div id="mensagem-final" style="display: none; text-align: center; padding: 10px;"></div>
+        <div id="ranking">
+          <h3>Ranking:</h3>
+          <ul id="ranking-list"></ul>
+        </div>
+      </div>
+
+      <div class="speakers1">
+        <div class="speaker right"></div>
+        <div class="speaker right"></div>
+      </div>
+      <div class="speakers2">
+        <div class="speaker right"></div>
+        <div class="speaker right"></div>
+      </div>
+      <div class="speakers3">
+        <div class="speaker right"></div>
+        <div class="speaker right"></div>
+      </div>
+      </div>
+      <div id="hinge"></div>
+      <div class="baixo">
+      <!-- Lado esquerdo: Botões A/B -->
+    
+    <div id="left-controls">
+      <div class="dpad">
+        <div class="up"></div>
+        <div class="down"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+      </div>
+    </div>
+      <div id="bottom-screen">
+          <div id="tela-inicial">
+            <button id="botao-start" onclick="mostrarMenu()">COMEÇAR</button>
+          </div>
+          <div id="menu" style="display: none;">
+            <label>Seu nome:</label>
+            <input type="text" id="player-name">
+            <label for="nivel">Dificuldade:</label>
+            <select id="nivel">
+              <option value="facil">Fácil</option>
+              <option value="medio">Médio</option>
+              <option value="dificil">Difícil</option>
+            </select>
+            <button onclick="iniciarJogo()">Iniciar Jogo</button>
+          </div>
+        <div id="game">
+            <p id="pontos">Pontos: 0</p>
+            <div id="opcoes"></div>
+          </div>
+          <p id="mensagem-abaixo">
+            🎮 Para voltar e iniciar um novo jogo, clique em <strong>Start</strong>
+          </p>
+          <button id="btn-reiniciar" onclick="reiniciar()" style="display:none;">Jogar Novamente</button>
+        </div>
+    <!-- Lado direito: D-Pad -->
+        <div id="right-controls">
+          <div class="dpadAB">
+            <div class="up">X</div>
+            <div class="down">A</div>
+            <div class="left">Y</div>
+            <div class="right">B</div>
+          </div>
+          <div class="text-buttons">
+            <button class="text-button" onclick="resetarJogo()">Start</button>
+            <button class="text-button" onclick="abrirMenu()">Menu</button>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

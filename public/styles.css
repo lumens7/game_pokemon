@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --azul-escuro: #292d74;
+    --azul: #3c3fb1;
+    --azul-claro: #554ffd;
+    --claro: #bcbafc;
+    --escuro: #020658;
+    --white: #EBECF0;
+    --amarelo-escuro: #ffc800;
+    --amarelo: #fce517;
+}
+
+body {
+  background-color: var(--claro);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150%;
+  margin: 0;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 15px;
+  color: var(--escuro);
+}
+
+#nintendo-ds {
+  background-color: var(--amarelo);
+  border: 8px solid var(--amarelo-escuro);
+  border-radius: 20px;
+  width: 500px;
+  height: 500px;
+  box-shadow: 0 0 20px #444;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#top-screen, #bottom-screen {
+  background-color: #fefefe;
+  border: 4px inset var(--amarelo-escuro);
+  margin: 8px auto;
+  border-radius: 10px;
+  height: 200px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+/* imagens */
+#logo-topo{
+  height: 300px; 
+  display: none;
+}
+#top-screen #pokemon-img{
+  max-height: 120px;
+}
+
+/* Divisor de telas */
+#hinge {
+  height: 8px;
+  background-color: var(--amarelo-escuro);
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 90%;
+  border-radius: 5px;
+}
+
+/* Botões de opções de resposta */
+button {
+  background-color: var(--azul);
+  color: var(--white);
+  border: none;
+  padding: 10px 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+}
+button:hover {
+  background-color: var(--azul-claro);
+}
+#opcoes button {
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 1.5rem; 
+  width: 80%;
+  margin-left: 13px;
+}
+
+/* Tela de cima e tela de baixo */
+#top-screen {
+  background-color: #fefefe; /*backdround principal onde da a cor de fundo dentro do jogo*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+  min-height: 200px;
+  min-width: 350px;
+  justify-self: center;
+  margin-top: 20px;
+}
+#bottom-screen{
+  justify-self: center;
+  margin-left: 30px;
+}
+#top-screen.tela-preta {
+  background-color: black; /*background inicial*/
+  color: black;
+}
+#top-screen.tela-preta * {
+  display: none;
+}
+#top-screen.hidden-content img,
+#top-screen.hidden-content #pergunta,
+#top-screen.hidden-content #rodada-info,
+#top-screen.hidden-content #mensagem-rodada {
+  display: none;
+}
+#menu{
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estrutura geral lateral: */
+#ds-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Lado esquerdo e direito (D-Pad) */
+#left-controls, #right-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* D-Pad visual */
+.dpad {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+.dpad div {
+  background-color: var(--azul);
+  position: absolute;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.5);
+}
+.dpad .up, .dpad .down {
+  width: 20px;
+  height: 25px;
+  left: 40px;
+}
+.dpad .up { top: 45px; }
+.dpad .down { bottom: -45px; }
+.dpad .left, .dpad .right {
+  width: 25px;
+  height: 20px;
+  top: 75px;
+}
+.dpad .left { left: 10px; }
+.dpad .right { right: -10px; }
+
+
+/* D-Pad A B X Y visual */
+.dpadAB {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin-top: 10px;
+}
+.dpadAB div {
+  position: absolute;
+  background-color: var(--azul-escuro);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.dpadAB .up, .dpadAB .down {
+  width: 25px;
+  height: 25px;
+  margin-top: 90px;
+  margin-left: -2px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: bold;
+}
+.dpadAB .up { top: 0px; }
+.dpadAB .down { bottom: 5px; }
+.dpadAB .left, .dpadAB .right {
+  width: 25px;
+  height: 25px;
+  top: 65px;
+  margin-left: -20px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: bold;
+}
+.dpadAB .left { left: -10px; }
+.dpadAB .right { right: 20px; }
+
+/* Botões start/menu visual */
+.text-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 70px;
+  margin-left: -90px;
+}
+.text-button {
+  background-color: var(--azul-claro);
+  border: 1px solid var(--azul-escuro);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--escuro);
+  font-family: 'Courier New', monospace;
+  margin: 5px;
+  align-items: left;
+  justify-content: left;
+
+}
+.text-button:hover {
+  background-color: var(--claro);
+}
+
+
+/* Auto-falantes */
+.speakers {
+  display: flex;
+  flex-direction: column;
+}
+.speakers1, .speakers2, .speakers3{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+}
+.speaker {
+  width: 4px;
+  height: 4px;
+  background-color: #978521;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+/*Div de cima e div de baixo*/
+.cima {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.baixo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* Mensagens da tela */
+#mensagem-rodada {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 10px;
+}
+#mensagem-final{
+  display: none; 
+  text-align: center; 
+  padding: 10px;
+}
+#rodada-info{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: var(--azul);
+}
+#pergunta{
+  margin-bottom: 10px;
+  color: var(--azul-escuro);
+}
+#mensagem-abaixo{
+  display: none; 
+  text-align: center; 
+  font-size: 10px; 
+  margin-top: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  line-height: 15px;
+}
+
+/* Ranking */
+#ranking {
+  display: none;
+  margin: 20px 20px;
+  width: 75%;
+  height: 60%;
+  max-height: 180px;
+  overflow-y: auto;
+  background: var(--claro);
+  color: #fefefe;
+  padding: 20px;
+  border-radius: 8px;
+  justify-items: center;
+}
+#ranking h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+#ranking-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+#ranking-list li {
+  margin-bottom: 6px;
+}
+#ranking button {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* tela inicial e começar*/
+#tela-inicial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+#botao-start {
+  background-color: var(--azul-claro);
+  border: 3px solid var(--azul-escuro);
+  font-family: 'Press Start 2P', monospace;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+#botao-start:hover {
+  transform: scale(1.05);
+}
+
+/* campos de dados do menu*/
+select, input{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: var(--azul-escuro);
+  border-color: var(--azul);
+}
+
+/* Pontos */
+#game{
+  display:none; 
+  flex-direction: column; 
+  align-items: center;
+}
+
+/* === Adições do primeiro CSS === */
+#scale-wrapper {
+  transform-origin: top center;
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.5);
+}
+
+#img-login {
+  max-width: 100%;
+  max-height: 140px;
+  margin-bottom: 10px;
+}
+
+/* Tamanho do ds em cada aparelho */
+@media (max-width: 1500px) {
+  #scale-wrapper {
+    transform: scale(1.1);
+  }
+}
+@media (max-width: 990px) {
+  #scale-wrapper {
+    transform: scale(1.1);
+  }
+}
+@media (max-width: 768px) {
+  #scale-wrapper {
+    transform: scale(1.1);
+  }
+}
+@media (max-width: 650px) {
+  #scale-wrapper {
+    transform: scale(1);
+  }
+}
+@media (max-width: 550px) {
+  #scale-wrapper {
+    transform: scale(0.9);
+  }
+}
+@media (max-width: 480px) {
+  #scale-wrapper {
+    transform: scale(0.65);
+  }
+}
