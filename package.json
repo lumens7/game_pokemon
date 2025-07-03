@@ -11,6 +11,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "@libsql/client": "^0.15.9",
+    "@prisma/client": "^6.11.1",
+    "express": "^5.1.0",
+    "prisma": "^6.11.1"
   }
 }
