@@ -1,20 +1,47 @@
-# 🎮 Jogo Pokémon DS - Quiz Interativo
+# 🕹️ Jogo Pokémon DS - Quiz Interativo
 
 Um jogo estilo *Nintendo DS* onde o jogador precisa identificar corretamente os Pokémon com base em suas imagens. Inspirado no visual retrô e na dinâmica clássica de quiz, com trilha de pontuação e rankings separados por dificuldade.
 
-![pokemon-preview](https://your-screenshot-link-if-you-have-one)
+[🎮 **JOGUE AGORA**](https://game-pokemon-g88l.onrender.com/)
 
 ---
 
-## 🧠 Como funciona
+## 📚 Objetivo do Projeto
 
-- O jogador digita seu nome e escolhe um nível de dificuldade:
-  - 🟢 **Fácil**: Pokémons da 1ª geração (IDs 1 a 151)
-  - 🟡 **Médio**: Gerações intermediárias (IDs 152 a 493)
-  - 🔴 **Difícil**: Pokémons mais recentes (IDs 494 a 898)
-- A cada rodada, um Pokémon é exibido com **3 opções de nome**.
-- Responda corretamente para ganhar pontos.
-- Ao final, sua pontuação é salva em um **ranking por nível**.
+Este jogo foi criado com os seguintes objetivos:
+
+- 🧠 Desenvolver lógica de programação aplicada em um projeto completo
+- 🌐 Trabalhar com APIs públicas reais (PokeAPI)
+- 💾 Praticar persistência de dados com banco de dados (Turso)
+- 🎨 Criar uma interface interativa e responsiva usando HTML/CSS/JS
+- 🚀 Compreender o ciclo completo de desenvolvimento web: frontend, backend e deploy
+
+---
+
+## 🕹️ Como funciona o jogo
+
+1. O jogador digita seu nome e escolhe um **nível de dificuldade**:
+   - 🟢 Fácil: Pokémon da 1ª geração (ID 1–151)
+   - 🟡 Médio: Gerações intermediárias (ID 152–493)
+   - 🔴 Difícil: Pokémon mais recentes (ID 494–898)
+
+2. Em cada rodada, aparece um Pokémon com 3 nomes possíveis:
+   - Se acertar, ganha **+10 pontos**
+   - Se errar, perde **–5 pontos**
+
+3. Ao final do jogo, o jogador vê sua **pontuação final e posição no ranking**.
+
+---
+
+## 🏆 Ranking inteligente
+
+- Cada partida salva automaticamente a pontuação no banco de dados.
+- O ranking é separado por **nível de dificuldade**.
+- Clicando em “Menu”, o jogador pode visualizar:
+  - 👑 Ranking geral
+  - 💪 Ranking Difícil
+  - 🧠 Ranking Médio
+  - 😊 Ranking Fácil
 
 ---
 
@@ -28,11 +55,7 @@ Um jogo estilo *Nintendo DS* onde o jogador precisa identificar corretamente os 
 | API externa  | [PokeAPI](https://pokeapi.co/) para dados e imagens        |
 | Hospedagem   | [Render.com](https://render.com/)                          |
 
+
 ---
-
-## 📦 Instalação local
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/game-pokemon.git
-   cd game-pokemon
+> ✅ **Este projeto foi desenvolvido no [IFTM – Instituto Federal de Educação, Ciência e Tecnologia do Triângulo Mineiro]**
+> como parte da disciplina **Projeto Integrador Extensionista I** (Curso Técnico em Informática).
