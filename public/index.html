@@ -67,17 +67,23 @@
           <div id="tela-inicial">
             <button id="botao-start" onclick="mostrarMenu()">COMEÇAR</button>
           </div>
-          <div id="menu" style="display: none;">
-            <label>Seu nome:</label>
-            <input type="text" id="player-name">
-            <label for="nivel">Dificuldade:</label>
-            <select id="nivel">
-              <option value="facil">Fácil</option>
-              <option value="medio">Médio</option>
-              <option value="dificil">Difícil</option>
-            </select>
-            <button onclick="iniciarJogo()">Iniciar Jogo</button>
-          </div>
+            <div id="menu" style="display:none;">
+              <label>Seu nome:</label>
+              <input type="text" id="player-name">
+              <label for="nivel">Dificuldade:</label>
+              <select id="nivel">
+                <option value="facil">Fácil</option>
+                <option value="medio">Médio</option>
+                <option value="dificil">Difícil</option>
+              </select>
+              <button onclick="iniciarJogo()">Iniciar Jogo</button>
+            </div>
+            <div id="rank-buttons" style="display:none;">
+              <button id="bot" onclick="carregarRanking('facil')">Rank Fácil</button>
+              <button id="bot" onclick="carregarRanking('medio')">Rank Médio</button>
+              <button id="bot" onclick="carregarRanking('dificil')">Rank Difícil</button>
+            </div>
+
         <div id="game">
             <p id="pontos">Pontos: 0</p>
             <div id="opcoes"></div>
