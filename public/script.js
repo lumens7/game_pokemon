@@ -293,26 +293,38 @@ function abrirMenu() {
 
 async function carregarRanking(dificuldade = null) {
   try {
-    const res = await fetch('/placar');
-    let dados = await res.json();
+    const url = dificuldade ? `/placar?dificuldade=${dificuldade}` : '/placar';
+    const res = await fetch(url);
+    const data = await res.json(); // data é um array direto
 
-    if (dificuldade) {
-      dados = dados.filter(r => r.dificuldade === dificuldade);
-    }
-    // ordena
-    dados.sort((a,b) => b.pontos - a.pontos);
+    // Filtra por dificuldade (se necessário)
+    let participantes = dificuldade
+      ? data.filter(p => p.dificuldade === dificuldade).slice(0, 10)
+      : data;
 
+    const total = data.length; // total geral (do banco)
+
+    // Atualiza a lista no HTML
     const ul = document.getElementById('ranking-list');
     ul.innerHTML = '';
-    dados.slice(0,5).forEach((p,i) => {
+    participantes.forEach((p, i) => {
       const li = document.createElement('li');
-      li.textContent = `${i+1}. ${p.nome} – ${p.pontos} pts`;
+      li.textContent = `${i + 1}. ${p.nome} – ${p.pontos} pts`;
       ul.appendChild(li);
     });
+
+    // Exibe o total (opcional)
+    const totalSpan = document.getElementById('total-participantes');
+    if (totalSpan) {
+      totalSpan.textContent = `Total de participantes: ${total}`;
+    }
+
   } catch (e) {
-    console.error('Erro ao carregar ranking', e);
+    console.error('Erro ao carregar ranking:', e);
   }
 }
+
+
 
 
 
