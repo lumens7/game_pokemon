@@ -467,6 +467,7 @@ select, input{
   flex-direction: row;
   justify-content: center;
   gap: 10px;
+  
 }
 .creators a{
   padding-top: 10px;
@@ -475,7 +476,7 @@ select, input{
   font-weight: bolder;
   text-decoration: none;
   text-align: center;
-  
+  color: var(--azul-claro);
 }
 #rank-buttons {
   display: none;
