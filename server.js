@@ -38,37 +38,13 @@ app.post('/placar', async (req, res) => {
 // GET: retorna todos os placares
 app.get('/placar', async (req, res) => {
   try {
-    const { dificuldade } = req.query;
-
-    let participantesQuery;
-    if (dificuldade) {
-      // Se for por dificuldade, pega só os 10 melhores
-      participantesQuery = await db.execute(
-        `SELECT nome, pontos, dificuldade FROM placares WHERE dificuldade = ? ORDER BY pontos DESC LIMIT 10`,
-        [dificuldade]
-      );
-    } else {
-      // Ranking geral (todos os participantes)
-      participantesQuery = await db.execute(
-        `SELECT nome, pontos, dificuldade FROM placares ORDER BY pontos DESC`
-      );
-    }
-
-    // Sempre busca o total geral de participantes (sem filtro)
-    const totalQuery = await db.execute(`SELECT COUNT(*) AS total FROM placares`);
-    const total = totalQuery[0][0].total;
-
-    res.json({
-      participantes: participantesQuery[0], // para mysql2
-      total: total
-    });
-
+    const result = await db.execute(`SELECT nome, pontos, dificuldade FROM placares ORDER BY pontos DESC LIMIT 50`);
+    res.json(result.rows);
   } catch (err) {
     console.error('Erro ao buscar placares:', err);
     res.status(500).send('Erro ao buscar do banco');
   }
 });
-
 
 app.listen(PORT, () => {
 });
